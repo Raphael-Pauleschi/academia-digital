@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import me.dio.academia.digital.entity.AvaliacaoFisica;
 import me.dio.academia.digital.entity.form.AvaliacaoFisicaForm;
-import me.dio.academia.digital.entity.form.AvaliacaoFisicaUpdateForm;
+import me.dio.academia.digital.entity.form.update.AvaliacaoFisicaUpdateForm;
 import me.dio.academia.digital.service.impl.AvaliacaoFisicaServiceImpl;
 
 @RestController
@@ -48,8 +48,5 @@ public class AvaliacaoFisicaController {
 	public void delete(@PathVariable Long id) {
 		service.delete(id);
 	}
-	
-	
-//Create put, delete and post mapping
 
 }
