@@ -35,7 +35,7 @@ public class AvaliacaoFisicaServiceImpl implements IAvaliacaoFisicaService {
 
   @Override
   public AvaliacaoFisica get(Long id) {
-    return null;
+    return avaliacaoFisicaRepository.findById(id).orElseThrow(() -> new NullPointerException());
   }
 
   @Override
@@ -51,6 +51,7 @@ public class AvaliacaoFisicaServiceImpl implements IAvaliacaoFisicaService {
 
   @Override
   public void delete(Long id) {
-
+	  get(id);
+	  avaliacaoFisicaRepository.deleteById(id);
   }
 }

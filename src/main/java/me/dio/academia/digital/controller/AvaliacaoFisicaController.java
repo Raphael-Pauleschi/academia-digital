@@ -24,5 +24,6 @@ public class AvaliacaoFisicaController {
   public List<AvaliacaoFisica> getAll(){
     return service.getAll();
   }
+//Create put, delete and post mapping
 
 }

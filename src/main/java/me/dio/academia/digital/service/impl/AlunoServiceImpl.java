@@ -29,10 +29,11 @@ public class AlunoServiceImpl implements IAlunoService {
 
     return repository.save(aluno);
   }
+  
 
   @Override
   public Aluno get(Long id) {
-    return null;
+    return repository.findById(id).orElseThrow(() -> new NullPointerException());
   }
 
   @Override
@@ -49,11 +50,20 @@ public class AlunoServiceImpl implements IAlunoService {
 
   @Override
   public Aluno update(Long id, AlunoUpdateForm formUpdate) {
-    return null;
+	  Aluno aluno = get(id);
+	  if(formUpdate.getNome() !=null)
+	  aluno.setNome(formUpdate.getNome());
+	  if(formUpdate.getBairro() !=null)
+	  aluno.setBairro(formUpdate.getBairro());
+	  if(formUpdate.getDataDeNascimento() !=null)
+	  aluno.setDataDeNascimento(formUpdate.getDataDeNascimento());
+	  return aluno;
   }
 
   @Override
   public void delete(Long id) {
+	  get(id);
+	  repository.deleteById(id);
   }
 
   @Override
