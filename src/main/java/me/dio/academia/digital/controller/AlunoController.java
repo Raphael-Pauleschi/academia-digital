@@ -55,10 +55,8 @@ public class AlunoController {
   }
   
   @PutMapping("/{id}")
-  public Aluno update(@PathVariable Long id) {
-	  AlunoUpdateForm formUpdate = null;
+  public Aluno update(@PathVariable Long id, @RequestBody AlunoUpdateForm formUpdate) {
 	  return service.update(id, formUpdate);
   }
-  //Create put, delete and post mapping
 
 }

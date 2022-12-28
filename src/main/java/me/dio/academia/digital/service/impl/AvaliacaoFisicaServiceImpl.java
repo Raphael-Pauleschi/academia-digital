@@ -46,7 +46,12 @@ public class AvaliacaoFisicaServiceImpl implements IAvaliacaoFisicaService {
 
   @Override
   public AvaliacaoFisica update(Long id, AvaliacaoFisicaUpdateForm formUpdate) {
-    return null;
+    AvaliacaoFisica avaliacao = get(id);
+    if(formUpdate.getPeso() >= 0)
+    	avaliacao.setPeso(formUpdate.getPeso());
+    if(formUpdate.getAltura() >= 0)
+    	avaliacao.setAltura(formUpdate.getAltura());
+	  return avaliacao;
   }
 
   @Override
